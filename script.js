@@ -7,6 +7,6 @@ launchButton.addEventListener('click', () => {
 
   // Redirect to the URL after the animation completes
   setTimeout(() => {
-    window.location.href = 'https://intelligentsiaclub.netlify.app/';
+    window.location.href = 'https://replit.com/';
   }, 2000); // Adjust the timing if needed
 });
