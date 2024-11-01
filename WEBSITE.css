@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center everything vertically */
+    background-color: #000; /* Black background for night sky */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Add stars - increased density */
+.stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow:
+        10px 20px white, 40px 80px white, 70px 90px white, 120px 40px white, 
+        150px 120px white, 200px 70px white, 230px 90px white, 300px 100px white,
+        350px 50px white, 400px 200px white, 450px 300px white, 500px 150px white, 
+        550px 400px white, 600px 500px white, 700px 250px white, 800px 600px white, 
+        850px 50px white, 900px 400px white, 1000px 200px white, 1100px 300px white, 
+        1200px 100px white, 1300px 450px white, 1400px 350px white, 1500px 250px white,
+        1600px 150px white, 1700px 500px white, 1800px 400px white, 1900px 200px white;
+    /* Add more positions as needed to cover more of the screen */
+}
+
+#rocket {
+    position: absolute;
+    bottom: 80px; /* Position the rocket above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px; /* Increased width for a bigger rocket */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Add asteroids */
+.asteroids {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #666; /* Gray color for asteroids */
+    border-radius: 50%;
+    opacity: 0.6; /* Slight transparency */
+    box-shadow:
+        200px 200px #666,
+        300px 250px #999,
+        150px 350px #777,
+        450px 150px #444,
+        600px 400px #888;
+}
+
+#launchButton {
+    position: absolute;
+    bottom: 20px;
+    right: 300px; /* Adjusted position */
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ffcc00; /* Bright yellow */
+    color: #001f3f; /* Dark blue text */
+    text-decoration: none; /* Remove underline from link */
+    border: none; /* Remove default button border */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+#launchButton:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+
+#presentationMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers both horizontally and vertically */
+    font-size: 50px;
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease-in; /* Smooth fade-in effect */
+    text-align: center; /* Center-aligns the text if it spans multiple lines */
+}
+
+
+#launchButton {
+    position: absolute;
+    bottom: 300px;
+    right: 710px; /* Adjusted position */
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ffcc00;
+    color: #001f3f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+#smokeContainer {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+
+.smoke {
+    position: absolute;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(180, 180, 180, 0.8);
+    border-radius: 50%;
+    animation: puff 0.7s ease-out forwards; /* Faster animation duration */
+    opacity: 0;
+}
+
+@keyframes puff {
+    0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0; /* Fade out halfway */
+    }
+    100% {
+        transform: translate(0, -80px) scale(2);
+        opacity: 0;
+    }
+}
+
